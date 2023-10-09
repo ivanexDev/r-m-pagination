@@ -9,16 +9,12 @@ interface BasicPaginationProps {
   pages?: number;
 }
 
-const BasicPagination: React.FC<BasicPaginationProps> = ({getCharacters,pages,}) => {
-
-	const handlePage = (e: React.MouseEvent<HTMLButtonElement>) => {
-    getCharacters(e.target.innerText);
-};
+const BasicPagination: React.FC<BasicPaginationProps> = ({pages,getCharacters}) => {
 
   return (
     <div className="paginador">
       <Stack spacing={2}>
-        <Pagination count={pages} onClick={handlePage} />
+        <Pagination count={pages} onChange={(event: React.ChangeEvent<unknown>, page: number)=>{getCharacters(page)}} />
       </Stack>
     </div>
   );
