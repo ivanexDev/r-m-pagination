@@ -14,7 +14,7 @@ const BasicPagination: React.FC<BasicPaginationProps> = ({pages,getCharacters}) 
   return (
     <div className="paginador">
       <Stack spacing={2}>
-        <Pagination count={pages} onChange={(event: React.ChangeEvent<unknown>, page: number)=>{getCharacters(page)}} />
+        <Pagination count={pages} onChange={(_event: React.ChangeEvent<unknown>, page: number)=>{getCharacters(page)}} />
       </Stack>
     </div>
   );

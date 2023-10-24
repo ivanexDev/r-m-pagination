@@ -13,7 +13,7 @@ function App() {
   const getCharacters:getCharacterType = async (pageNumber = 1) => {
 
     const response = await fetch(
-      `https://rickandmortyapi.com/api/character?count=5&page=${pageNumber}`
+      `https://rickandmortyapi.com/api/character?page=${pageNumber}`
     );
     const data = await response.json();
     setCharacters(data);
